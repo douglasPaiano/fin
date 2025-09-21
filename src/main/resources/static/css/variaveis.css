@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap);
+
+:root {
+  /*CORES*/
+  --cor-primaria-1: #c2c2c2;
+  --cor-primaria-2: #6495ed;
+  --cor-primaria-3: #567dcd;
+  --cor-primaria-4: #4d69c3;
+  --cor-primaria-5: #4454b9;
+  --cor-primaria-6: #3b41ae;
+  --cor-secundaria-1: #000000;
+  --cor-secundaria-2: #111111;
+  --cor-secundaria-3: #222222;
+  --cor-secundaria-4: #333333;
+  --cor-secundaria-5: #444444;
+  /*CORES*/
+  
+  /*FONTES*/
+  --fonte-principal: 'Noto Sans JP', sans-serif;
+  /*FONTES*/
+
+  /**/
+  /**/
+}

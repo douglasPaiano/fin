@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/userProfileView.css}">
+</head>
+
+<body>
+
+    <div class="profile">
+        <div>
+            teste
+        </div>
+    </div>
+
+    <div class="banks">
+
+        <div>
+            <a th:href="@{text}" th:text="'Cadastrar novo ciclo'"> teste</a>
+        </div>
+
+        <div class="banks-table">
+
+            <table th:if="${cycle.id != null}">
+                <tbody>
+                    <tr th:each="cycle: ${cycle}">
+                        <td th:text="${cycle.bank}">teste</td>
+                        <td th:text="${cycle.openingDay}">teste</td>
+                        <td th:text="${cycle.dueDate}">teste</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form th:if="${cycle.id == null}" th:action="@{Perfil/Salvar}" th:object="${cycle}" method="post">
+                <div>
+                    <select th:field="*{bank}">
+                        <option th:each="bank : ${bankEnum}" th:value="${bank}" th:text="${bank}"></option>
+                    </select>
+                    <input type="text" th:field="*{openingDay}" placeholder="Dia de abertura" maxlength="2">
+                    <input type="text" th:field="*{dueDate}" placeholder="Dia de vencimento" maxlength="2">
+                </div>
+                <div>
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

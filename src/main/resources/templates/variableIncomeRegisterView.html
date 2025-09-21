@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/variableIncomeRegisterView.css}">
+</head>
+
+<body>
+    <div class="form">
+        <form th:action="@{/ReceitaVariavel/Cadastrar}" th:object="${variableIncome}" method="post">
+            <input type="number" name="valor" placeholder="valor">
+            <input type="text" name="descricao" placeholder="Descrição">
+            <input type="date" name="dataEntrada">
+
+            <Button type="submit"> Salvar</Button>
+        </form>
+    </div>
+</body>
+
+</html>

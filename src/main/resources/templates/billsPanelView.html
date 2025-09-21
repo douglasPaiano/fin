@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/billsPanelView.css}">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/topMenuView.css}">
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Periodo</td>
+                <td>Gasto Fixo</td>
+                <td>Gasto Proprio</td>
+                <td>Gasto Terceiros</td>
+                <td>Gasto Variavel</td>
+                <td>Gasto Total</td>
+                <td>Receita Fixa</td>
+                <td>Receita Variavel</td>
+                <td>Receita Total Mes</td>
+                <td>Função</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="bl : ${bills}">
+                <td th:text="${bl.usuario.nome}"></td>
+                <td th:text="${bl.mesFiscal.nome}"></td>
+                <td th:text="${bl.gastoFixo}"></td>
+                <td th:text="${bl.gastoProprio}"></td>
+                <td th:text="${bl.gastoTerceiros}"></td>
+                <td th:text="${bl.gastoVariavel}"></td>
+                <td th:text="${bl.gastoTotal}"></td>
+                <td th:text="${bl.receitaFixa}"></td>
+                <td th:text="${bl.receitaVariavel}"></td>
+                <td th:text="${bl.receitaTotalMes}"></td>
+                <td><button>Detalhar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/starterMenuView.css}">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/topMenuView.css}">
+</head>
+
+<body>
+
+    <div th:insert="~{topMenu :: copy}" th:with="user=${loggedUser}"></div>
+
+    <div class="general-panel">
+        <p>SETES</p>
+        <p>SETES</p>
+        <p>SETES</p>
+    </div>
+    <div class="secundary-panel">
+        <div class="top-line-display">
+            <section class="info-display">
+                <div class="top-info">
+                    <label for="nome" th:text="'Renda variavel ' +  '13/02/2025 a 13/03/2025'"></label>
+
+                </div>
+                <div class="middle-info">
+                    <p th:text="'Total do periodo ' + ${periodSum}"></p>
+                    <table>
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr th:each="vi : ${variableIncome}">
+                                <td th:text="${vi.idUsuario.nome}"></td>
+                                <td th:text="${vi.valor}"></td>
+                                <td th:text="${vi.descricao}"></td>
+                                <td th:text="${vi.dataEntrada}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-info">
+                    <a th:href="@{ReceitaVariavel/Lista}" th:text="'Exibir Todas'"></a>
+                    <a th:href="@{ReceitaVariavel/Cadastro}" th:text="'Nova'"></a>
+                </div>
+            </section>
+
+            <section class="info-display">
+                <div class="top-info">
+                    <label th:text="'Gastos Fixos'"></label>
+                </div>
+                <div class="middle-info">
+                    <table>
+                        <tbody>
+                            <tr th:each="fe : ${fixedExpenses}">
+                                <td th:text="${fe.estado}"></td>
+                                <td th:text="${fe.local}"></td>
+                                <td th:text="${fe.tipoGasto}"></td>
+                                <td th:text="${fe.valor}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-info">
+                    <a th:href="@{GastoFixo}" th:text="'Exibir Todos'"></a>
+                </div>
+            </section>
+        </div>
+
+        <div class="bottom-line-display">
+
+            <section class="info-display">
+                <div class="top-info">
+                    <label for="nome">Débitos</label>
+                </div>
+                <div class="middle-info">
+                    <table>
+                        <tbody>
+                            <tr th:each="db : ${debit}">
+                                <td th:text="${db.valor}"></td>
+                                <td th:text="${db.tipoCompra}"></td>
+                                <td th:text="${db.tipoPagamento}"></td>
+                                <td th:text="${db.localCompra}"></td>
+                                <td th:text="${db.dataCompra}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-info">
+                    <a th:href="@{Debito}" th:text="'Exibir Todos'"></a>
+                </div>
+            </section>
+            <section class="info-display">
+                <div class="top-info">
+
+                </div>
+                <div class="middle-info">
+                    <table>
+                        <tbody>
+                            <tr th:each="bl : ${bill}" class="teste">
+                                <td>
+                                    <div class="title">
+                                        <span th:text="${bl.usuario.nome}"></span>
+                                        <span th:text="${bl.mesFiscal.nome}"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="">
+                                        <span th:text="${bl.gastoFixo}"></span>
+                                        <span th:text="${bl.gastoProprio}"></span>
+                                        <span th:text="${bl.gastoTerceiros}"></span>
+                                        <span th:text="${bl.gastoVariavel}"></span>
+                                        <span th:text="${bl.gastoTotal}"></span>
+                                        <span th:text="${bl.receitaFixa}"></span>
+                                        <span th:text="${bl.receitaVariavel}"></span>
+                                        <span th:text="${bl.receitaTotalMes}"></span>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-info">
+                   <a th:href="@{Bills}" th:text="'Exibir Todos'"></a>
+                </div>
+            </section>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

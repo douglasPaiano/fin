@@ -1,0 +1,38 @@
+@import url(variaveis.css);
+body{
+    background-color: var(--cor-secundaria-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    color: var(--cor-primaria-1);
+    font-family: var(--fonte-principal);
+}
+body form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    border: 1px solid var(--cor-primaria-1);
+    padding: 10px;
+    border-radius: 5px;
+}
+body form input{
+    background-color: var(--cor-secundaria-1);
+    color: var(--cor-primaria-1);
+    border: none;
+    border-bottom: 1px solid var(--cor-primaria-1);
+}
+body form input:focus{
+   outline: none;
+}
+
+body form button{
+    text-transform: uppercase;
+    background-color: var(--cor-primaria-2);
+    border: var(--cor-primaria-2);
+    border-radius: 15px;
+    width: 80%;
+    padding: 5px;
+}

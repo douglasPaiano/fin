@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/cadastroView.css}">
+</head>
+
+<body>
+    <form th:action="@{cadastro/cadastrar}" th:object="${usuarioModel}" method="post">
+
+        <input type="text" th:field="*{nome}" id="" placeholder="Nome">
+        <input type="text" th:field="*{rgCpfCnpj}" id="" placeholder="RG, CPF ou CNPJ">
+        <input type="text" th:field="*{receitaFixa}" id="" placeholder="Receita fixa mensal">
+        <input type="text" th:field="*{email}" id="" placeholder="Email">
+        <input type="text" th:field="*{usuario}" id="" placeholder="Usuário">
+        <input type="password" name="senha" id="" placeholder="Senha">
+        <input type="password" name="confirmaSenha" id="" placeholder="Confirma a senha">
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script th:src="@{/js/cadastroView.js}"></script>
+</body>
+
+</html>

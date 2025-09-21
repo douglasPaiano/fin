@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/receitasVariaveisView.css}">
+    <link rel="stylesheet" href="/src/main/resources/static/receitasVariaveisView.css">
+</head>
+
+<body>
+    <div class="class_lista_receitas_variaveis" id="id_lista_receitas_variaveis">
+        <section class="section_busca_receita_variavel">
+            <label for="buscar_receita_variavel"></label>
+            <input type="text" name="buscar_receita_variavel" id="input_buscar_receita_variavel">
+            <button type="button">Buscar</button>
+        </section>
+        <section class="section_lista_receitas_variaveis" id="">
+            <tr th:each="rs : ${receitasVariaveis}" class="teste">
+                <th th:text="${rs.idUsuario.nome}">teste</th>
+                <th th:text="${rs.valor}">teste</th>
+                <th th:text="${rs.descricao}">teste</th>
+                <th th:text="${rs.dataEntrada}">teste</th>
+            </tr>
+        </section>
+        
+    </div>
+</body>
+
+</html>

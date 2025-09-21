@@ -1,0 +1,81 @@
+body,
+html {
+  background-color: grey;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body div {
+  display: flex;
+  flex-direction: row;
+
+}
+
+body .profile {
+  height: 70%;
+}
+
+body .banks {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+}
+
+body .banks .banks-table {
+  display: flex;
+  flex-direction: row;
+  column-gap: 15px;
+  border-top: 1px solid black;
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+}
+
+body .banks .banks-table table {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 10%;
+  padding: 10px;
+}
+
+body .banks .banks-table table tbody tr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body .banks .banks-table form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 10%;
+  padding: 10px;
+}
+
+body .banks .banks-table form div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+body .banks .banks-table form select,
+button,
+input {
+  background-color: transparent;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+  color: black;
+}
+
+body .banks .banks-table form select,
+button,
+input,
+input::placeholder {
+  color: black;
+}

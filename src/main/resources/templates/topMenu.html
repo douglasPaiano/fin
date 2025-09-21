@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link type="text/css" rel="stylesheet" th:href="@{/css/topMenuView.css}">
+
+  <body>
+  
+    <div th:fragment="copy">
+      &copy; 2011 The Good Thymes Virtual Grocery
+      <span th:text="${user}"> </span>
+    </div>
+  
+  </body>
+  
+</html>

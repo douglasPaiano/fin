@@ -1,0 +1,17 @@
+05-05 / terminei o painel do debito -> fazer o cadastro 
+06-05 / resovler erro do converter
+06-05 / resolvi o problema do converter com DTO, usar isso daqui 
+        para frente para salvar os campos e evitar erros de conversão,
+        terminar o save do Debit
+30-06 / terminei o cadastro de debitos
+04-07 / terminar a parte da exibição do bill por ciclo atual, falta fazer o filtro da data, e exibir na tela
+
+27/08 arrumar os dados da bill, tem q achar um jeito de armazenar a informacao por periodo para todos os campos
+
+29/08 resolver o erro q surgiu das mudanca no banco
+
+31/08 erro da linha 95 do billService é por causa do lazy achar uma forma de resolver
+
+
+>= 13 = mesmo mes
+< 13 = mes passado

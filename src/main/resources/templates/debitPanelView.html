@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/debitPanelView.css}">
+</head>
+
+<body>
+
+    <form th:action="@{Debito/Cadastro}" th:object="${newDebit}" method="post">
+
+        <label for="cicloSelect">Dia De Abertura:</label>
+        <select name="cicloSelect" th:field="*{ciclo}">
+            <option th:each="cycle: ${allUserCycle}" th:value="${cycle.id}" th:text="${cycle.openingDay}"></option>
+        </select>
+
+        <label for="buyType">Tipo De Compra:</label>
+        <select name="buyType" th:field="*{tipoCompra}">
+            <option th:each="buyType : ${buyType}" th:value="${buyType}" th:text="${buyType}"></option>
+        </select>
+
+        <label for="paymentType">Tipo Pagamento:</label>
+        <select name="paymentType" th:field="*{tipoPagamento}">
+            <option th:each="paymentType : ${paymentType}" th:value="${paymentType}" th:text="${paymentType}"></option>
+        </select>
+
+        <label for="valor">Valor:</label>
+        <input name="valor" type="number" th:field="*{valor}">
+
+        <label for="nomeComprador">Nome Comprador:</label>
+        <input type="text" name="nomeComprador" th:field="*{nomeComprador}">
+
+        <label for="numeroParcelas">Número de Parcelas:</label>
+        <input type="number" th:field="*{numeroParcelas}">
+
+        <label for="valorParcelas">Valor Das Parcelas:</label>
+        <input type="number" name="valorParcelas" th:field="*{valorParcelas}">
+
+        <label for="juros">Juros:</label>
+        <input type="number" name="juros" th:field="*{juros}">
+
+        <label for="valorJuros">Valor Juros:</label>
+        <input type="number" name="valorJuros" th:field="*{valorJuros}">
+
+        <label for="localCompra">Local de Compra</label>
+        <input type="text" name="localCompra" th:field="*{localCompra}">
+
+        <label for="dataCompra">Data de Compra</label>
+        <input type="date" name="dataCompra" th:field="*{dataCompra}">
+
+        <label for="dataPagamento">Data De Pagamento</label>
+        <input type="date" name="dataPagamento" th:field="*{dataPagamento}">
+
+        <button type="submit"> Salvar </button>
+    </form>
+
+    <table>
+        <tbody>
+            <tr th:each="db : ${debit}">
+                <td th:text="${db.valor}"></td>
+                <td th:text="${db.tipoCompra}"></td>
+                <td th:text="${db.nomeComprador}"></td>
+                <td th:text="${db.tipoPagamento}"></td>
+                <td th:text="${db.numeroParcelas}"></td>
+                <td th:text="${db.valorParcelas}"></td>
+                <td th:text="${db.juros}"></td>
+                <td th:text="${db.valorJuros}"></td>
+                <td th:text="${db.localCompra}"></td>
+                <td th:text="${db.dataPagamento}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

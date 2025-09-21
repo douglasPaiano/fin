@@ -1,19 +1,19 @@
 package com.douglas.enums;
 
-public enum BancoType implements BaseEnum<String> {
+public enum PagamentoType implements BaseEnum<String> {
 
-    NUBANK("1","Nubank"),
-    BB("2","Banco do Brasil"),
-    SICREDI("3","Sicredi");
+    DEBITO("D", "Débito"),
+    CREDITO("C", "Crédito"),
+    PARCELADO("P", "Parcelado");
 
     private String id;
     private String nome;
 
-    BancoType(String id, String nome) {
+    private PagamentoType(String id, String nome) {
         setId(id);
         setNome(nome);
     }
-    
+
     @Override
     public String getId() {
         return id;
@@ -30,4 +30,5 @@ public enum BancoType implements BaseEnum<String> {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
 }

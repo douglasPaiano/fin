@@ -24,13 +24,15 @@ public class BaseJPA<T, ID> implements BaseRepository<T, ID> {
     }
 
     @Override
+    @Transactional
     public List<T> findAll() {
         return entityManager.createQuery("from " + domainClass.getName(), domainClass).getResultList();
     }
 
     @Override
+    @Transactional
     public T save(T entity) {
-        entityManager.persist(entity);
+        entityManager.merge(entity);
         return entity;
 
     }
