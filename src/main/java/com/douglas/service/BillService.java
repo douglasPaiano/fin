@@ -38,6 +38,9 @@ public class BillService {
     private VariableIncomeRepository variableIncomeRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private VariableIncomeService teste;
+
 
     public Boolean verifyFiscalDate(UserModel user) {
 
